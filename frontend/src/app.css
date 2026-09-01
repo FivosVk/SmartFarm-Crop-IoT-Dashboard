@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f4f6f5;
+    color: #1f2a24;
+  }
+  
+  .app-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .loading, .empty-state {
+    text-align: center;
+    padding: 48px;
+    color: #566a5f;
+  }
+  
+  .error-panel {
+    background: #fdecea;
+    border: 1px solid #f5c2c0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .error-panel button {
+    margin-top: 12px;
+  }
+  
+  .farm-summary {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  
+  .farm-summary-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .farm-summary-title h1 {
+    font-size: 22px;
+    margin: 0;
+  }
+  
+  .farm-summary-meta {
+    display: flex;
+    gap: 20px;
+    color: #566a5f;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  .farm-summary-actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+  }
+  
+  .status-pill {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .status-normal { background: #e2f3e6; color: #1e7a3a; }
+  .status-watch { background: #fff3d6; color: #93650a; }
+  .status-critical { background: #fde3e1; color: #b3261e; }
+  .status-neutral { background: #e8eaed; color: #4a5560; }
+  
+  .banner {
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  .banner-success { background: #e2f3e6; color: #1e7a3a; }
+  .banner-error { background: #fde3e1; color: #b3261e; }
+  .banner-warning { background: #fff3d6; color: #93650a; }
+  
+  .crop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  
+  .crop-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .crop-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .crop-card-header h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .crop-card-location {
+    margin: 0;
+    color: #566a5f;
+    font-size: 14px;
+  }
+  
+  .condition-pill {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .condition-dry { background: #fff3d6; color: #93650a; }
+  .condition-healthy { background: #e2f3e6; color: #1e7a3a; }
+  .condition-too-wet { background: #dbeafe; color: #1c4a8f; }
+  .condition-problem { background: #fde3e1; color: #b3261e; }
+  
+  dl.crop-card-settings, dl.crop-card-readings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 12px;
+    margin: 0;
+    font-size: 13px;
+  }
+  
+  dl.crop-card-settings div, dl.crop-card-readings div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  dt { color: #7a8b81; }
+  dd { margin: 0; font-weight: 600; }
+  
+  .sensor-timestamp {
+    font-size: 12px;
+    color: #7a8b81;
+    margin: 4px 0;
+  }
+  
+  .crop-card-alerts {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    color: #93650a;
+  }
+  
+  .crop-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 13px;
+    background: #2f6b46;
+    color: white;
+    transition: opacity 0.15s;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  button:disabled {
+    background: #b7c2bb;
+    cursor: not-allowed;
+  }
+  
+  .btn-danger {
+    background: #b3261e;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 10;
+  }
+  
+  .crop-form, .sensor-history {
+    background: white;
+    border-radius: 10px;
+    padding: 24px;
+    width: 100%;
+    max-width: 420px;
+    max-height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .crop-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    color: #3a4a3f;
+  }
+  
+  .crop-form input, .crop-form select, .crop-form textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #c9d2cc;
+    font-size: 14px;
+  }
+  
+  .crop-form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .form-error {
+    color: #b3261e;
+    font-size: 13px;
+    margin: 0;
+  }
+  
+  .sensor-history {
+    max-width: 720px;
+  }
+  
+  .sensor-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sensor-history table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  
+  .sensor-history th, .sensor-history td {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid #eef1ef;
+  }
